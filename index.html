@@ -2,708 +2,746 @@
 <html lang="zh-HK">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>天國光芒：五德聖殿朝聖之旅 | Lumen Fidei</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>聖殿光影修復師：天主教五大核心價值解謎旅程</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold-primary: #d4af37;
-            --gold-glow: rgba(212, 175, 55, 0.45);
-            --gold-light: #f7e7b4;
-            --bg-deep: #0a0e17;
-            --card-bg: rgba(18, 24, 38, 0.88);
-            --accent-crimson: #8b0000;
-            --accent-blue: #1e3d59;
-            --border-divine: 1px solid rgba(212, 175, 55, 0.4);
+            --gold: #f5af19;
+            --gold-bright: #fff275;
+            --deep-navy: #070b12;
+            --card-glass: rgba(13, 22, 38, 0.85);
+            --border-gold: 1px solid rgba(245, 175, 25, 0.45);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
 
         body {
             font-family: 'Noto Serif TC', serif;
-            background: radial-gradient(circle at 50% 20%, #17243c 0%, #0a0e17 80%);
-            color: #e0e6ed;
+            background: radial-gradient(circle at 50% 30%, #111d33 0%, #05080f 85%);
+            color: #e2e8f0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 16px;
+            padding: 12px;
             overflow-x: hidden;
         }
 
-        .main-container {
+        .cathedral-frame {
             width: 100%;
             max-width: 820px;
-            background: var(--card-bg);
-            border: 2px solid var(--gold-primary);
-            border-radius: 16px;
-            box-shadow: 0 0 35px var(--gold-glow), inset 0 0 20px rgba(212, 175, 55, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 24px;
+            background: var(--card-glass);
+            border: 2px solid var(--gold);
+            border-radius: 18px;
+            box-shadow: 0 0 35px rgba(245, 175, 25, 0.25), inset 0 0 25px rgba(0,0,0,0.7);
+            backdrop-filter: blur(12px);
+            padding: 20px;
             position: relative;
-            margin-top: 10px;
         }
 
-        /* 頂部裝飾天頂 */
-        .gothic-header {
+        /* 標題裝飾 */
+        header {
             text-align: center;
-            padding-bottom: 18px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(245, 175, 25, 0.3);
+            padding-bottom: 14px;
+            margin-bottom: 14px;
         }
 
-        .church-cross {
-            font-size: 2.2rem;
-            color: var(--gold-primary);
-            text-shadow: 0 0 15px var(--gold-primary);
-            margin-bottom: 4px;
-            animation: pulseGlow 3s infinite alternate;
-        }
-
-        @keyframes pulseGlow {
-            from { text-shadow: 0 0 10px var(--gold-primary); }
-            to { text-shadow: 0 0 25px #fff, 0 0 35px var(--gold-primary); }
+        .cross-emblem {
+            font-size: 2rem;
+            color: var(--gold);
+            text-shadow: 0 0 15px var(--gold);
         }
 
         h1 {
-            font-family: 'Cinzel', 'Noto Serif TC', serif;
-            font-size: 1.85rem;
-            color: var(--gold-light);
+            font-size: 1.6rem;
+            color: var(--gold-bright);
             letter-spacing: 2px;
-            margin-bottom: 6px;
+            margin: 4px 0;
         }
 
-        .designer-badge {
-            font-size: 0.88rem;
-            color: #b0c4de;
-            background: rgba(212, 175, 55, 0.1);
-            display: inline-block;
+        .author-tag {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            background: rgba(245, 175, 25, 0.12);
             padding: 4px 14px;
             border-radius: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            margin-top: 5px;
+            border: 1px solid rgba(245, 175, 25, 0.3);
+            display: inline-block;
         }
 
-        /* 聖德彩繪玻璃進度條 */
-        .virtue-gems-container {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 24px;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.35);
-            border-radius: 12px;
-            border: var(--border-divine);
-        }
-
-        .virtue-gem {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 0.8rem;
-            color: #7b8a9e;
-            transition: all 0.5s ease;
-        }
-
-        .gem-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 1px solid #4a5568;
-            background: #1a202c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            margin-bottom: 4px;
-            transition: all 0.5s ease;
-        }
-
-        .virtue-gem.active .gem-icon {
-            border-color: var(--gold-primary);
-            color: var(--gold-primary);
-            box-shadow: 0 0 12px var(--gold-primary);
-        }
-
-        .virtue-gem.completed .gem-icon {
-            background: linear-gradient(135deg, #d4af37, #aa7c11);
-            color: #000;
-            border-color: #fff;
-            box-shadow: 0 0 15px var(--gold-glow);
-            font-weight: bold;
-        }
-
-        .virtue-gem.completed {
-            color: var(--gold-light);
-            font-weight: 600;
-        }
-
-        /* 狀態指示欄 */
-        .status-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 18px;
-            font-size: 0.95rem;
-            color: var(--gold-light);
-        }
-
-        .grace-points {
-            background: rgba(139, 0, 0, 0.35);
-            padding: 5px 14px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 99, 71, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* 內容區塊 */
-        .stage-box {
-            background: rgba(13, 19, 33, 0.9);
-            border: var(--border-divine);
-            border-radius: 12px;
-            padding: 22px;
-            margin-bottom: 20px;
-            min-height: 220px;
-        }
-
-        .stage-tag {
-            color: var(--gold-primary);
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            display: block;
-            font-weight: bold;
-        }
-
-        .stage-title {
-            font-size: 1.4rem;
-            color: #fff;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .scripture-quote {
-            font-style: italic;
-            color: #d1d8e0;
-            background: rgba(212, 175, 55, 0.08);
-            border-left: 3px solid var(--gold-primary);
-            padding: 10px 14px;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 16px;
-            font-size: 0.98rem;
-            line-height: 1.6;
-        }
-
-        .history-context {
-            color: #a5b1c2;
-            font-size: 0.92rem;
-            line-height: 1.65;
-            margin-bottom: 20px;
-        }
-
-        /* 選項按鈕組 */
-        .options-grid {
+        /* 五大聖窗狀態 */
+        .stained-glass-nav {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-top: 15px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
         }
 
-        .option-btn {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
-            color: #f1f5f9;
-            border: 1px solid rgba(212, 175, 55, 0.35);
-            padding: 14px 18px;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-family: inherit;
-            text-align: left;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .option-btn:hover:not(:disabled) {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(30, 41, 59, 0.9));
-            border-color: var(--gold-primary);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.25);
-        }
-
-        .option-btn.correct {
-            background: linear-gradient(135deg, #1b4332, #2d6a4f) !important;
-            border-color: #52b788 !important;
-            color: #d8f3dc;
-        }
-
-        .option-btn.incorrect {
-            background: linear-gradient(135deg, #590d22, #800f2f) !important;
-            border-color: #ff4d6d !important;
-            color: #ffe5ec;
-        }
-
-        .option-btn:disabled {
-            cursor: default;
-        }
-
-        /* 回饋區與知識卡片 */
-        .feedback-card {
-            display: none;
-            margin-top: 18px;
-            padding: 16px;
-            border-radius: 10px;
-            line-height: 1.6;
-            animation: fadeIn 0.4s ease;
-        }
-
-        .feedback-card.correct-feedback {
-            background: rgba(45, 106, 79, 0.3);
-            border: 1px solid #52b788;
-            color: #d8f3dc;
-        }
-
-        .feedback-card.incorrect-feedback {
-            background: rgba(128, 15, 47, 0.3);
-            border: 1px solid #ff4d6d;
-            color: #ffe5ec;
-        }
-
-        .action-container {
-            margin-top: 16px;
-            text-align: right;
-        }
-
-        .gold-btn {
-            background: linear-gradient(135deg, #d4af37, #997316);
-            color: #0b0f19;
-            font-weight: bold;
-            font-size: 1rem;
-            padding: 10px 24px;
-            border: none;
+        .window-slot {
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid #334155;
             border-radius: 8px;
+            padding: 8px 4px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #64748b;
+            transition: all 0.4s ease;
+        }
+
+        .window-slot.active {
+            border-color: var(--gold);
+            color: var(--gold-bright);
+            box-shadow: 0 0 12px rgba(245, 175, 25, 0.3);
+        }
+
+        .window-slot.restored {
+            background: linear-gradient(180deg, rgba(245, 175, 25, 0.25), rgba(0,0,0,0.7));
+            border-color: #ffd700;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 0 0 8px var(--gold);
+        }
+
+        /* 互動畫布區 */
+        .stage-workspace {
+            position: relative;
+            background: rgba(4, 8, 16, 0.95);
+            border-radius: 12px;
+            border: var(--border-gold);
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 330px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .stage-intro {
+            padding: 14px;
+            background: rgba(15, 23, 42, 0.8);
+            border-top: 1px solid rgba(245, 175, 25, 0.2);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .stage-intro strong {
+            color: var(--gold-bright);
+        }
+
+        /* 操作控制項 */
+        .control-panel {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        .sacred-btn {
+            background: linear-gradient(135deg, rgba(245, 175, 25, 0.2), rgba(20, 30, 48, 0.9));
+            color: #f8fafc;
+            border: 1px solid var(--gold);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.95rem;
             font-family: inherit;
+            cursor: pointer;
             transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        .gold-btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        .sacred-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, rgba(245, 175, 25, 0.4), rgba(40, 60, 90, 0.9));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(245, 175, 25, 0.4);
         }
 
-        /* 證書模態框 */
-        .certificate-screen {
+        .sacred-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* 通關證書 */
+        .certificate-panel {
             display: none;
             text-align: center;
-            padding: 10px;
-        }
-
-        .cert-frame {
-            border: 3px double var(--gold-primary);
-            padding: 28px 20px;
-            background: radial-gradient(circle at center, #162032, #0c121e);
+            padding: 18px;
+            background: radial-gradient(circle, #1a2844, #0b111e);
+            border: 2px double var(--gold);
             border-radius: 12px;
-            box-shadow: 0 0 30px var(--gold-glow);
-            margin: 20px 0;
-            position: relative;
+            box-shadow: 0 0 30px rgba(245, 175, 25, 0.3);
         }
 
-        .cert-title {
-            font-family: 'Cinzel', serif;
-            color: var(--gold-light);
-            font-size: 1.7rem;
-            margin-bottom: 8px;
-        }
-
-        .cert-name-input {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid var(--gold-primary);
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            text-align: center;
-            font-family: inherit;
-            margin: 12px 0;
-            width: 80%;
-            max-width: 320px;
-        }
-
-        /* 底部署名 */
         footer {
-            margin-top: 18px;
-            text-align: center;
+            margin-top: 14px;
             font-size: 0.82rem;
-            color: #8c9ba5;
-            letter-spacing: 0.5px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
+            color: #64748b;
+            text-align: center;
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 1.45rem; }
-            .main-container { padding: 16px; }
-            .stage-title { font-size: 1.2rem; }
-            .virtue-gem span { font-size: 0.72rem; }
-            .gem-icon { width: 30px; height: 30px; font-size: 0.95rem; }
-            .option-btn { font-size: 0.92rem; padding: 12px 14px; }
+            h1 { font-size: 1.3rem; }
+            canvas { height: 280px; }
+            .window-slot span { font-size: 0.72rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <!-- 頂部聖堂標題與署名 -->
-        <header class="gothic-header">
-            <div class="church-cross">☩</div>
-            <h1>天國光芒：五德聖殿朝聖之旅</h1>
-            <div class="designer-badge">明愛元朗陳震夏中學 張耀宗副校長 設計</div>
+    <div class="cathedral-frame">
+        <header>
+            <div class="cross-emblem">✠</div>
+            <h1>聖殿光影修復師</h1>
+            <div class="author-tag">明愛元朗陳震夏中學 張耀宗副校長 設計</div>
         </header>
 
-        <!-- 五大核心價值 聖德進度條 -->
-        <nav class="virtue-gems-container" aria-label="核心價值進度">
-            <div class="virtue-gem active" id="gem-0">
-                <div class="gem-icon">⚚</div>
-                <span>真理</span>
-            </div>
-            <div class="virtue-gem" id="gem-1">
-                <div class="gem-icon">⚖</div>
-                <span>義德</span>
-            </div>
-            <div class="virtue-gem" id="gem-2">
-                <div class="gem-icon">❤</div>
-                <span>愛德</span>
-            </div>
-            <div class="virtue-gem" id="gem-3">
-                <div class="gem-icon">🌱</div>
-                <span>生命</span>
-            </div>
-            <div class="virtue-gem" id="gem-4">
-                <div class="gem-icon">⌂</div>
-                <span>家庭</span>
-            </div>
+        <!-- 5大彩繪玻璃窗狀態 -->
+        <nav class="stained-glass-nav">
+            <div class="window-slot active" id="slot-0">Ⅰ 真理<br><span>(Veritas)</span></div>
+            <div class="window-slot" id="slot-1">Ⅱ 義德<br><span>(Justitia)</span></div>
+            <div class="window-slot" id="slot-2">Ⅲ 愛德<br><span>(Caritas)</span></div>
+            <div class="window-slot" id="slot-3">Ⅳ 生命<br><span>(Vita)</span></div>
+            <div class="window-slot" id="slot-4">Ⅴ 家庭<br><span>(Familia)</span></div>
         </nav>
 
-        <!-- 狀態數值 -->
-        <div class="status-bar">
-            <div id="stage-counter">聖德考驗：第 1 / 5 關</div>
-            <div class="grace-points">
-                <span>✦ 恩寵靈修值:</span>
-                <span id="grace-score" style="font-weight: bold; color: #ffd700;">100</span>
+        <!-- 遊戲互動主體 -->
+        <div id="game-container">
+            <div class="stage-workspace">
+                <canvas id="sacredCanvas" width="760" height="330"></canvas>
+                <div class="stage-intro" id="stage-desc">
+                    正在呼喚聖靈之光，載入修復試煉...
+                </div>
+            </div>
+
+            <!-- 動態操作面板 -->
+            <div class="control-panel" id="controls">
+                <!-- 動態注入各關特定按鈕 -->
             </div>
         </div>
 
-        <!-- 主遊戲試煉卡片 -->
-        <main id="game-view">
-            <div class="stage-box">
-                <span class="stage-tag" id="virtue-tag">VERITAS ・ 真理之門</span>
-                <h2 class="stage-title" id="question-title">加載試煉中...</h2>
-                <div class="scripture-quote" id="scripture-text">聖經章節</div>
-                <div class="history-context" id="history-text">歷史與背景情境</div>
-                
-                <div class="options-grid" id="options-container">
-                    <!-- 動態載入選項 -->
-                </div>
-
-                <div class="feedback-card" id="feedback-box">
-                    <div id="feedback-msg"></div>
-                </div>
-
-                <div class="action-container">
-                    <button class="gold-btn" id="next-btn" style="display: none;" onclick="proceedToNextStage()">領受恩寵，邁向下一關 ➔</button>
+        <!-- 破關榮譽認證面板 -->
+        <div class="certificate-panel" id="cert-panel">
+            <div style="font-size: 2.2rem; color: var(--gold);">☩</div>
+            <h2 style="color: var(--gold-bright); margin-bottom: 10px;">大教堂特任・聖德修復宗師</h2>
+            <p style="margin-bottom: 14px; color: #cbd5e1; font-size: 0.95rem;">
+                同學已親手修復堅道聖母無原罪主教座堂象徵「真理、義德、愛德、生命、家庭」之五大神聖彩繪玻璃！
+            </p>
+            <input type="text" id="player-name" placeholder="請在此輸入同學姓名" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--gold); background: rgba(0,0,0,0.5); color: #fff; text-align: center; font-size: 1.05rem; margin-bottom: 14px;">
+            <div style="background: rgba(0,0,0,0.3); padding: 14px; border-radius: 8px; border: 1px dashed rgba(245,175,25,0.4); max-width: 540px; margin: 0 auto 16px auto; font-size: 0.9rem; line-height: 1.7; text-align: left;">
+                <p>✦ <strong>真理：</strong>以理性求真，破除虛妄迷霧。</p>
+                <p>✦ <strong>義德：</strong>實踐石硤尾大火之救難濟貧，守護人間正道。</p>
+                <p>✦ <strong>愛德：</strong>效法基督濯足與香港明愛僕人奉獻精神。</p>
+                <p>✦ <strong>生命：</strong>承傳修女會醫護慈愛，尊崇生命每寸恩典。</p>
+                <p>✦ <strong>家庭：</strong>效法納匝肋聖家，互諒互助，築起溫暖避風港。</p>
+                <div style="margin-top: 10px; border-top: 1px solid rgba(245,175,25,0.2); padding-top: 8px; color: var(--gold);">
+                    認證導師與課程總策劃：<strong>明愛元朗陳震夏中學 張耀宗副校長</strong>
                 </div>
             </div>
-        </main>
-
-        <!-- 通關結算與榮譽認證 -->
-        <section class="certificate-screen" id="cert-view">
-            <div class="cert-frame">
-                <div style="font-size: 2.2rem; color: var(--gold-primary);">✠</div>
-                <h2 class="cert-title">聖德宗徒卓越榮譽認證</h2>
-                <p style="color: #b0c4de; margin-bottom: 12px; font-size: 0.95rem;">
-                    恭喜你圓滿通過天主教教育五大核心價值之神聖朝聖旅程！
-                </p>
-                
-                <div>
-                    <input type="text" id="student-name-input" class="cert-name-input" placeholder="請在此輸入同學姓名" maxlength="15">
-                </div>
-
-                <div style="margin: 16px auto; max-width: 580px; text-align: left; background: rgba(0,0,0,0.4); padding: 16px; border-radius: 8px; border: 1px solid rgba(212,175,55,0.2); line-height: 1.7; font-size: 0.92rem;">
-                    <p>茲證明該同學明辨<strong>真理</strong>之引領、崇尚<strong>義德</strong>之公道、力行<strong>愛德</strong>之奉獻、尊崇<strong>生命</strong>之神聖、建構<strong>家庭</strong>之共融。</p>
-                    <p style="margin-top: 8px; color: var(--gold-light);">最終恩寵靈修評價：<span id="final-rank" style="font-weight: bold; color: #ffd700;"></span>（得分：<span id="final-score-val"></span>）</p>
-                    <hr style="border: 0; border-top: 1px dashed rgba(212,175,55,0.3); margin: 12px 0;">
-                    <p style="font-size: 0.85rem; color: #cbd5e1;">認證導師與課程總策劃：<strong>明愛元朗陳震夏中學 張耀宗副校長</strong></p>
-                </div>
-
-                <button class="gold-btn" onclick="window.print()" style="margin-top: 8px;">🖨️ 打印 / 截圖保存此認證</button>
-                <button class="gold-btn" onclick="restartGame()" style="margin-top: 8px; background: #2d3748; color: #e2e8f0; margin-left: 10px;">重新朝聖</button>
-            </div>
-        </section>
+            <button class="sacred-btn" onclick="window.print()">🖨️ 列印 / 截圖存檔</button>
+            <button class="sacred-btn" onclick="resetAllStages()" style="background: #1e293b; margin-left: 10px;">重新修復</button>
+        </div>
     </div>
 
     <footer>
-        <p>天主教教育五大核心價值探索遊戲 ｜ 本校宗教及價值教育校本教材</p>
-        <p style="color: #64748b; margin-top: 4px;">由 明愛元朗陳震夏中學 張耀宗副校長 精心策劃及設計</p>
+        <p>天主教教育五大核心價值 ｜ 互動校本宗教學習教材</p>
+        <p style="color: #475569; margin-top: 2px;">明愛元朗陳震夏中學 張耀宗副校長 策劃設計</p>
     </footer>
 
     <script>
-        // Web Audio API 聖殿和弦音效合成器 (免外部音訊檔案，保證100%離線可玩)
+        // 音效引擎 (Web Audio API 合成管風琴與神聖鐘鳴)
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        function playSacredChime(type) {
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume();
-            }
-            const now = audioCtx.currentTime;
+        function playChime(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const t = audioCtx.currentTime;
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
 
-            if (type === 'correct') {
-                // 莊嚴高雅的雙音和弦聖鐘 (880Hz -> 1320Hz)
+            if (type === 'hit') {
                 osc.type = 'sine';
-                osc.frequency.setValueAtTime(587.33, now); // D5
-                osc.frequency.exponentialRampToValueAtTime(880, now + 0.15); // A5
-                gain.gain.setValueAtTime(0.3, now);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+                osc.frequency.setValueAtTime(523.25, t); // C5
+                osc.frequency.exponentialRampToValueAtTime(783.99, t + 0.1); // G5
+                gain.gain.setValueAtTime(0.2, t);
+                gain.gain.exponentialRampToValueAtTime(0.001, t + 0.6);
+            } else if (type === 'stage_clear') {
+                // 三和弦昇華鐘聲
+                [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+                    const subOsc = audioCtx.createOscillator();
+                    const subGain = audioCtx.createGain();
+                    subOsc.type = 'triangle';
+                    subOsc.frequency.setValueAtTime(freq, t + idx * 0.08);
+                    subGain.gain.setValueAtTime(0.25, t + idx * 0.08);
+                    subGain.gain.exponentialRampToValueAtTime(0.001, t + 1.8);
+                    subOsc.connect(subGain);
+                    subGain.connect(audioCtx.destination);
+                    subOsc.start(t + idx * 0.08);
+                    subOsc.stop(t + 2.0);
+                });
+                return;
             } else {
-                // 低沉警省的鐘鳴
                 osc.type = 'triangle';
-                osc.frequency.setValueAtTime(220, now);
-                osc.frequency.exponentialRampToValueAtTime(164.81, now + 0.2);
-                gain.gain.setValueAtTime(0.25, now);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+                osc.frequency.setValueAtTime(261.63, t);
+                gain.gain.setValueAtTime(0.15, t);
+                gain.gain.exponentialRampToValueAtTime(0.001, t + 0.4);
             }
 
             osc.connect(gain);
             gain.connect(audioCtx.destination);
-            osc.start(now);
-            osc.stop(now + 1.3);
+            osc.start(t);
+            osc.stop(t + 0.7);
         }
 
-        // 五大核心價值試煉題庫（融合聖經與香港天主教歷史）
-        const stagesData = [
-            {
-                virtue: "真理 (Veritas)",
-                tag: "VERITAS ・ 第一殿堂：真理之光",
-                title: "堅守真理與時代明辨",
-                scripture: "「你們如果固守我的道，就真是我的門徒；你們必認識真理，而真理必會使你們自由。」（若望福音 8:31-32）",
-                history: "【香港天主教歷史探索】中環堅道坐落著1888年落成的聖母無原罪主教座堂，見證香港信仰薪火傳承。先賢主教如徐誠斌主教常勉勵青年：面對世俗迷霧與不實資訊，信徒當以理性與勇氣追尋客觀真理。在中學生活中，哪種行為最能實踐「真理」價值？",
-                options: [
-                    { text: "A. 在社交媒體轉發未經求證的聳動言論，只要合乎自己喜好即可", correct: false, reason: "盲從未經查證的流言會蒙蔽理性，違背真理明辨之德。" },
-                    { text: "B. 勇於查證事實，不隨波逐流，即使說真話需承擔代價亦堅持誠實守正", correct: true, reason: "真理要求人言行正直、誠懇求真，不畏犧牲，這正是天主教青年之風骨。" },
-                    { text: "C. 為求考試取得高分，默認抄襲同儕作業，事後保持緘默", correct: false, reason: "抄襲欺騙違背誠實守信之德，失去了發掘知識真理的本質。" },
-                    { text: "D. 遇見是非爭端時冷眼旁觀，不表達立場亦不探求公允事實", correct: false, reason: "真理需要熱忱追求與服膺，消極逃避無法捍衛善惡的分野。" }
-                ],
-                trivia: "💡 信仰歷史微知識：堅道主教座堂被列為法定一級歷史建築，其彩繪玻璃與高聳哥德式尖頂，正象徵引導世人超越世俗偏見、仰望永恆真理。"
-            },
-            {
-                virtue: "義德 (Justitia)",
-                tag: "JUSTITIA ・ 第二殿堂：公義天平",
-                title: "捍衛正義與恤顧貧弱",
-                scripture: "「對天主，要愛慕；對近人，要公道。」—— 聖依勒內（St. Irenaeus）",
-                history: "【香港天主教歷史探索】1953年聖誕夜石硤尾發生驚世大火，近六萬貧民頓失家園。天主教白英奇主教於同年創辦「天主教社會福利會」（即今日香港明愛 Caritas 前身），在極其匱乏中設立施粥所、分配救援物資。試問天主教教育中的「義德」核心意涵為何？",
-                options: [
-                    { text: "A. 追求絕對的利益均分，無論個人是否付出努力都獲得同等獎勵", correct: false, reason: "公義並非盲目平均主義，而是根據每人的尊嚴與正當權益給予其所應得。" },
-                    { text: "B. 僅對自己家人及好友慷慨，其餘弱小者之困頓與己無關", correct: false, reason: "義德要求我們超越狹隘私利，在天主面前尊重每一個近人的權利。" },
-                    { text: "C. 尊重他人天賦尊嚴，守護公平程序，並特別關懷無聲與受邊緣化的弱小弟兄", correct: true, reason: "實踐正義、促進公益，使弱勢者享有平等人性尊嚴，是基督義德的具體展現。" },
-                    { text: "D. 只要法律未明確禁止，即可透過手段謀取最大個人利益", correct: false, reason: "義德高於世俗法律底線，它本於天主良心與倫理處世的最高標準。" }
-                ],
-                trivia: "💡 信仰歷史微知識：1953年石硤尾大火後，教會迅速建立平房徙置區與救濟網，這份義德精神促成了香港戰後最龐大的社會福利志業。"
-            },
-            {
-                virtue: "愛德 (Caritas)",
-                tag: "CARITAS ・ 第三殿堂：仁愛十字",
-                title: "以愛服務與締造希望",
-                scripture: "「孩子們，我們愛，不可只用言語，也不可只用口舌，而要用行動和事實。」（若望一書 3:18）",
-                history: "【香港天主教歷史探索】香港明愛以拉丁文「Caritas」（基督之博愛）命名，數十年來堅持「非以役人，乃役於人」之僕人精神，開辦明愛醫院、職業訓練及學校。耶穌在最後晚餐更親自為門徒濯足。作為陳震夏中學學生，體現「愛德」的最佳體現是？",
-                options: [
-                    { text: "A. 口頭常說友愛同儕，但當同學遇到挫折失落時卻冷嘲熱諷", correct: false, reason: "愛德絕非虛妄口舌，若缺乏實際的同理行動，便失去愛的真諦。" },
-                    { text: "B. 以自我為中心，只與能帶給自己功利好處的同學交往", correct: false, reason: "這屬於功利主義交換，真正的基督愛德是無私與不求回報的。" },
-                    { text: "C. 效法基督僕人領袖精神，主動伸出援手扶持弱小，在校園鄰里以行動散播溫暖", correct: true, reason: "愛德是所有德行之冠！正如明愛宗旨『以愛服務，締造希望』，在行動中活出基督的愛。" },
-                    { text: "D. 參與義工服務只為賺取課外活動證書時數，敷衍應對長者需求", correct: false, reason: "缺乏純潔愛心與同理心的形式化服務，無法觸動生命。" }
-                ],
-                trivia: "💡 信仰歷史微知識：『Caritas』在天主教傳統中是超性之德的最高峰。香港明愛自1960年代起舉辦明愛賣物會，凝聚全城善心，傳承逾半世紀！"
-            },
-            {
-                virtue: "生命 (Vita)",
-                tag: "VITA ・ 第四殿堂：生命泉源",
-                title: "崇高生命與天賦恩賜",
-                scripture: "「我來，是為叫他們獲得生命，且獲得更豐富的生命。」（若望福音 10:10）",
-                history: "【香港天主教歷史探索】19世紀中葉起，沙爾德聖保祿修女會與嘉諾撒仁愛修女會先後遠赴香港，在物資極匱乏與疫症蔓延時期，悉心收養棄嬰、創辦嘉諾撒醫院與安老院，見證「由受孕至自然死亡」每一個生命的神聖。面對生命價值的考驗，我們應如何自處？",
-                options: [
-                    { text: "A. 認為人的價值完全取決於學業成績、財富與外貌條件", correct: false, reason: "生命本質神聖，其價值來自天主的獨特創造，而非世俗功利標準。" },
-                    { text: "B. 珍惜天主賦予的獨特生命，在逆境中持守希望，並尊重守護每一個人的生命尊嚴", correct: true, reason: "天主視每個人為無價之寶，肯定生命豐富意涵，在脆弱病困中更顯尊貴。" },
-                    { text: "C. 遇上課業挫折便輕率自我放棄，甚至用言語傷害他人的自尊", correct: false, reason: "挫折是生命淬煉的過程，輕蔑生命會傷害天父的創造工程。" },
-                    { text: "D. 鼓吹適者生存，認為身心障礙者或體弱長者是社會的沉重負擔", correct: false, reason: "天主教倫理深切重視弱小生命的維護，倡導生命文化對抗冷漠文化。" }
-                ],
-                trivia: "💡 信仰歷史微知識：修女會初抵港時在灣仔及中環創立育嬰堂與醫療所，許多瀕危孤兒在修女的愛護下重獲新生，奠定香港現代醫療與幼兒照護基石。"
-            },
-            {
-                virtue: "家庭 (Familia)",
-                tag: "FAMILIA ・ 第五殿堂：聖家共融",
-                title: "家庭共融與孝愛相承",
-                scripture: "「他便同他們下去，來到納匝肋，屬他們管轄。他的母親把這一切事存在心中。」（路加福音 2:51）",
-                history: "【聖經與現代家庭啟迪】納匝肋聖家（耶穌、聖母瑪利亞、聖若瑟）在貧寒與逃難埃及的艱苦中互信守望，聖若瑟以忠誠勞動守護家室。天主教視家庭為「微型教會」與社會的基本磐石。身為中學生，維繫家庭共融的核心要素為何？",
-                options: [
-                    { text: "A. 在家沉迷手機電玩，拒絕與父母溝通，視父母的關懷為無理嘮叨", correct: false, reason: "封閉冷漠會築起代溝高牆，破壞家庭互愛相敬的親情紐帶。" },
-                    { text: "B. 體會父母勞苦，常存感恩孝愛之心，遇意見分歧時耐心溝通，促進家人和睦共融", correct: true, reason: "在家孝敬父母、彼此相敬承擔，正是實踐天主教家庭價值之起點。" },
-                    { text: "C. 要求父母必須無條件滿足自己所有的物質消費慾望，否則發脾氣抗議", correct: false, reason: "家庭建立在犧牲與彼此體諒之上，過度物質索求會腐蝕親情。" },
-                    { text: "D. 認為家庭僅是提供食宿的處所，自己毋須對家庭分擔任何責任", correct: false, reason: "每個家庭成員都是共融團體的一部分，應各盡其職分擔家務與關愛。" }
-                ],
-                trivia: "💡 信仰歷史微知識：天主教香港教區長年設立『公教婚姻輔導會』與明愛家庭服務中心，致力支援基層家庭與青年培育，陪伴無數家庭走過風雨！"
+        const canvas = document.getElementById('sacredCanvas');
+        const ctx = canvas.getContext('2d');
+        let currentStage = 0;
+        let animationFrameId;
+
+        // 全局粒子系統
+        let particles = [];
+        for (let i = 0; i < 40; i++) {
+            particles.push({
+                x: Math.random() * 760,
+                y: Math.random() * 330,
+                radius: Math.random() * 2 + 1,
+                vy: -Math.random() * 0.5 - 0.2,
+                alpha: Math.random() * 0.7 + 0.3
+            });
+        }
+
+        function drawSacredParticles() {
+            particles.forEach(p => {
+                p.y += p.vy;
+                if (p.y < 0) { p.y = 330; p.x = Math.random() * 760; }
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(245, 175, 25, ${p.alpha})`;
+                ctx.fill();
+            });
+        }
+
+        // ================= 關卡 1：真理（理智稜鏡折射） =================
+        let prismAngle = 0; // 0, 45, 90, 135
+        function initStage1() {
+            document.getElementById('stage-desc').innerHTML = `
+                <strong>【第一關：真理之門 (Veritas)】</strong><br>
+                「你們必認識真理，而真理必會使你們自由。」（若 8:32）<br>
+                <em>解謎任務：</em>世俗網絡充斥虛假言論。請點擊畫面中的<strong>「理智稜鏡」</strong>旋轉角度，將左方的天主道光折射直達右方「堅道主教座堂真理印記」！
+            `;
+            const controls = document.getElementById('controls');
+            controls.innerHTML = `
+                <button class="sacred-btn" onclick="rotatePrism()">↻ 旋轉理智稜鏡 (當前角度: ${prismAngle}°)</button>
+            `;
+        }
+
+        function rotatePrism() {
+            prismAngle = (prismAngle + 45) % 180;
+            playChime('hit');
+            document.getElementById('controls').innerHTML = `
+                <button class="sacred-btn" onclick="rotatePrism()">↻ 旋轉理智稜鏡 (當前角度: ${prismAngle}°)</button>
+            `;
+            if (prismAngle === 90) {
+                setTimeout(() => stageCleared(1), 600);
             }
+        }
+
+        function renderStage1() {
+            ctx.fillStyle = '#050a14';
+            ctx.fillRect(0, 0, 760, 330);
+            drawSacredParticles();
+
+            // 光源
+            ctx.fillStyle = '#f5af19';
+            ctx.beginPath();
+            ctx.arc(100, 165, 22, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#fff';
+            ctx.font = '12px Noto Serif TC';
+            ctx.fillText('天主聖言', 76, 170);
+
+            // 稜鏡
+            ctx.save();
+            ctx.translate(380, 165);
+            ctx.rotate((prismAngle * Math.PI) / 180);
+            ctx.strokeStyle = '#fff275';
+            ctx.lineWidth = 3;
+            ctx.fillStyle = 'rgba(255, 242, 117, 0.25)';
+            ctx.beginPath();
+            ctx.moveTo(0, -40);
+            ctx.lineTo(35, 30);
+            ctx.lineTo(-35, 30);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+            ctx.restore();
+
+            // 目標核心
+            ctx.strokeStyle = (prismAngle === 90) ? '#4ade80' : '#e2e8f0';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(630, 130, 70, 70);
+            ctx.fillStyle = (prismAngle === 90) ? '#166534' : '#1e293b';
+            ctx.fillRect(630, 130, 70, 70);
+            ctx.fillStyle = '#ffd700';
+            ctx.fillText('真理之核', 642, 170);
+
+            // 光線軌跡
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(255, 242, 117, 0.85)';
+            ctx.lineWidth = 4;
+            ctx.moveTo(122, 165);
+            ctx.lineTo(380, 165);
+            if (prismAngle === 90) {
+                ctx.lineTo(630, 165);
+                ctx.stroke();
+                // 成功光芒
+                ctx.fillStyle = 'rgba(74, 222, 128, 0.3)';
+                ctx.beginPath();
+                ctx.arc(665, 165, 45, 0, Math.PI * 2);
+                ctx.fill();
+            } else {
+                const endY = 165 + Math.tan((prismAngle * Math.PI)/180) * 120;
+                ctx.lineTo(500, Math.max(30, Math.min(300, endY)));
+                ctx.stroke();
+            }
+        }
+
+        // ================= 關卡 2：義德（石硤尾公義天平） =================
+        let balanceScore = 20; // 目標 50
+        function initStage2() {
+            document.getElementById('stage-desc').innerHTML = `
+                <strong>【第二關：義德之門 (Justitia)】</strong><br>
+                1953年石硤尾大火六萬貧民流離失所，白英奇主教創設「天主教社會福利會」（香港明愛前身）。<br>
+                <em>解謎任務：</em>分配正義要求捍衛弱者尊嚴！請點擊下方物資，平衡公義天平至<strong>神聖水平線 (50)</strong>！
+            `;
+            updateStage2Controls();
+        }
+
+        function addJustice(val) {
+            balanceScore = Math.min(100, Math.max(0, balanceScore + val));
+            playChime('hit');
+            updateStage2Controls();
+            if (balanceScore === 50) {
+                setTimeout(() => stageCleared(2), 600);
+            }
+        }
+
+        function updateStage2Controls() {
+            document.getElementById('controls').innerHTML = `
+                <button class="sacred-btn" onclick="addJustice(10)">🍞 救濟糧水 (+10)</button>
+                <button class="sacred-btn" onclick="addJustice(20)">⛺ 平房庇護所 (+20)</button>
+                <button class="sacred-btn" onclick="addJustice(-15)">⚖️ 重調公義平衡 (-15)</button>
+                <span style="align-self:center; font-weight:bold; color:var(--gold);">當前平衡值: ${balanceScore} / 50</span>
+            `;
+        }
+
+        function renderStage2() {
+            ctx.fillStyle = '#060d1a';
+            ctx.fillRect(0, 0, 760, 330);
+            drawSacredParticles();
+
+            // 支撐柱
+            ctx.strokeStyle = '#d4af37';
+            ctx.lineWidth = 6;
+            ctx.beginPath();
+            ctx.moveTo(380, 80);
+            ctx.lineTo(380, 270);
+            ctx.stroke();
+
+            // 橫梁角度依據 balanceScore 計算
+            const tilt = (balanceScore - 50) * 0.8 * (Math.PI / 180);
+            ctx.save();
+            ctx.translate(380, 100);
+            ctx.rotate(tilt);
+
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = '#f5af19';
+            ctx.beginPath();
+            ctx.moveTo(-180, 0);
+            ctx.lineTo(180, 0);
+            ctx.stroke();
+
+            // 吊盤
+            ctx.strokeRect(-210, 40, 60, 15);
+            ctx.strokeRect(150, 40, 60, 15);
+            ctx.beginPath();
+            ctx.moveTo(-180, 0); ctx.lineTo(-180, 40);
+            ctx.moveTo(180, 0); ctx.lineTo(180, 40);
+            ctx.stroke();
+
+            ctx.restore();
+
+            // 水平合格線標記
+            ctx.strokeStyle = 'rgba(74, 222, 128, 0.4)';
+            ctx.setLineDash([6, 6]);
+            ctx.beginPath();
+            ctx.moveTo(180, 100);
+            ctx.lineTo(580, 100);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            ctx.fillStyle = (balanceScore === 50) ? '#4ade80' : '#f87171';
+            ctx.font = '14px Noto Serif TC';
+            ctx.fillText(balanceScore === 50 ? '✓ 公義已平正！貧弱得依歸' : '天平失衡中，請注入救濟與公義', 285, 295);
+        }
+
+        // ================= 關卡 3：愛德（仁愛光網串接） =================
+        let loveNodes = [
+            { x: 180, y: 80, name: "基督最後晚餐濯足", lit: false },
+            { x: 580, y: 80, name: "聖文生與聖保祿女修會", lit: false },
+            { x: 260, y: 240, name: "香港明愛白英奇救濟", lit: false },
+            { x: 500, y: 240, name: "明愛賣物會與青年扶貧", lit: false }
         ];
+        let loveStep = 0;
 
-        let currentStageIndex = 0;
-        let graceScore = 100;
-        let answeredCurrent = false;
+        function initStage3() {
+            loveStep = 0;
+            loveNodes.forEach(n => n.lit = false);
+            document.getElementById('stage-desc').innerHTML = `
+                <strong>【第三關：愛德之門 (Caritas)】</strong><br>
+                「我們愛，不可只用言語口舌，而要用行動和事實。」（若一 3:18）<br>
+                <em>解謎任務：</em>依循歷史時間脈絡，點擊下方四大歷史火種，將博愛之光連結成堅固的心形光網！
+            `;
+            updateStage3Controls();
+        }
 
-        function loadStage(index) {
-            answeredCurrent = false;
-            const stage = stagesData[index];
+        function clickLoveNode(idx) {
+            if (idx === loveStep) {
+                loveNodes[idx].lit = true;
+                loveStep++;
+                playChime('hit');
+                updateStage3Controls();
+                if (loveStep === 4) {
+                    setTimeout(() => stageCleared(3), 700);
+                }
+            }
+        }
 
-            // 更新頂部寶石與進度
-            document.querySelectorAll('.virtue-gem').forEach((gem, idx) => {
-                gem.classList.remove('active');
-                if (idx === index) gem.classList.add('active');
+        function updateStage3Controls() {
+            let html = '';
+            loveNodes.forEach((node, i) => {
+                html += `<button class="sacred-btn" ${node.lit ? 'disabled style="border-color:#4ade80;"' : ''} onclick="clickLoveNode(${i})">✦ ${i+1}. ${node.name}</button>`;
+            });
+            document.getElementById('controls').innerHTML = html;
+        }
+
+        function renderStage3() {
+            ctx.fillStyle = '#0a0914';
+            ctx.fillRect(0, 0, 760, 330);
+            drawSacredParticles();
+
+            // 繪製連接線
+            ctx.strokeStyle = '#f5af19';
+            ctx.lineWidth = 3;
+            for (let i = 0; i < loveStep - 1; i++) {
+                ctx.beginPath();
+                ctx.moveTo(loveNodes[i].x, loveNodes[i].y);
+                ctx.lineTo(loveNodes[i+1].x, loveNodes[i+1].y);
+                ctx.stroke();
+            }
+            if (loveStep === 4) {
+                ctx.beginPath();
+                ctx.moveTo(loveNodes[3].x, loveNodes[3].y);
+                ctx.lineTo(loveNodes[0].x, loveNodes[0].y);
+                ctx.stroke();
+            }
+
+            // 繪製節點
+            loveNodes.forEach((node, idx) => {
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, 16, 0, Math.PI * 2);
+                ctx.fillStyle = node.lit ? '#f5af19' : '#334155';
+                ctx.fill();
+                ctx.strokeStyle = '#ffd700';
+                ctx.stroke();
+
+                ctx.fillStyle = node.lit ? '#fff' : '#94a3b8';
+                ctx.font = '13px Noto Serif TC';
+                ctx.fillText(node.name, node.x - 60, node.y + 32);
+            });
+        }
+
+        // ================= 關卡 4：生命（微光守護呼吸） =================
+        let candleHealth = 30; // 目標 100
+        function initStage4() {
+            candleHealth = 40;
+            document.getElementById('stage-desc').innerHTML = `
+                <strong>【第四關：生命之門 (Vita)】</strong><br>
+                嘉諾撒與聖保祿修女於19世紀創立育嬰堂及醫院，守護病患與棄嬰。<br>
+                <em>解謎任務：</em>世俗功利與挫折如同寒風。請以愛心與祈禱持續注入能量，使<strong>「生命之燭」光芒達到 100%</strong>！
+            `;
+            document.getElementById('controls').innerHTML = `
+                <button class="sacred-btn" onclick="nourishLife(15)">🕊️ 為生命祈禱與關懷 (+15%)</button>
+                <button class="sacred-btn" onclick="nourishLife(20)">🏥 尊崇弱小病患尊嚴 (+20%)</button>
+            `;
+        }
+
+        function nourishLife(amt) {
+            candleHealth = Math.min(100, candleHealth + amt);
+            playChime('hit');
+            if (candleHealth >= 100) {
+                setTimeout(() => stageCleared(4), 600);
+            }
+        }
+
+        function renderStage4() {
+            ctx.fillStyle = '#080d12';
+            ctx.fillRect(0, 0, 760, 330);
+            drawSacredParticles();
+
+            // 燭身
+            ctx.fillStyle = '#f1f5f9';
+            ctx.fillRect(360, 160, 40, 120);
+
+            // 火焰半徑依健康度成長
+            const flameRadius = 15 + (candleHealth * 0.35);
+            const grad = ctx.createRadialGradient(380, 140, 5, 380, 140, flameRadius);
+            grad.addColorStop(0, '#ffffff');
+            grad.addColorStop(0.3, '#ffea75');
+            grad.addColorStop(0.7, 'rgba(245, 175, 25, 0.7)');
+            grad.addColorStop(1, 'transparent');
+
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(380, 140, flameRadius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 護盾與進度
+            ctx.fillStyle = '#ffd700';
+            ctx.font = '14px Noto Serif TC';
+            ctx.fillText(`生命光輝熱度: ${candleHealth}% / 100%`, 310, 305);
+        }
+
+        // ================= 關卡 5：家庭（聖家拱頂築石） =================
+        let familyStones = [
+            { name: "孝敬", placed: false },
+            { name: "包容", placed: false },
+            { name: "陪伴", placed: false },
+            { name: "祈禱", placed: false }
+        ];
+        let placedCount = 0;
+
+        function initStage5() {
+            placedCount = 0;
+            familyStones.forEach(s => s.placed = false);
+            document.getElementById('stage-desc').innerHTML = `
+                <strong>【第五關：家庭之門 (Familia)】</strong><br>
+                納匝肋聖家在逆境互諒相守。家庭是天主教倫理的溫暖庇護所。<br>
+                <em>解謎任務：</em>請依序鑲嵌四枚聖家拱頂基石，築起堅固不移的聖堂家庭拱門！
+            `;
+            updateStage5Controls();
+        }
+
+        function placeStone(idx) {
+            if (!familyStones[idx].placed) {
+                familyStones[idx].placed = true;
+                placedCount++;
+                playChime('hit');
+                updateStage5Controls();
+                if (placedCount === 4) {
+                    setTimeout(() => stageCleared(5), 800);
+                }
+            }
+        }
+
+        function updateStage5Controls() {
+            let html = '';
+            familyStones.forEach((s, i) => {
+                html += `<button class="sacred-btn" ${s.placed ? 'disabled style="border-color:#4ade80;"' : ''} onclick="placeStone(${i})">☩ 鑲嵌基石：${s.name}</button>`;
+            });
+            document.getElementById('controls').innerHTML = html;
+        }
+
+        function renderStage5() {
+            ctx.fillStyle = '#0a0a14';
+            ctx.fillRect(0, 0, 760, 330);
+            drawSacredParticles();
+
+            // 拱門輪廓
+            ctx.strokeStyle = '#475569';
+            ctx.lineWidth = 8;
+            ctx.beginPath();
+            ctx.arc(380, 260, 160, Math.PI, 0);
+            ctx.stroke();
+
+            // 繪製拱石
+            const angles = [Math.PI * 0.85, Math.PI * 0.65, Math.PI * 0.35, Math.PI * 0.15];
+            familyStones.forEach((stone, i) => {
+                const x = 380 + Math.cos(angles[i]) * 160;
+                const y = 260 - Math.sin(angles[i]) * 160;
+
+                ctx.fillStyle = stone.placed ? '#d4af37' : '#1e293b';
+                ctx.beginPath();
+                ctx.arc(x, y, 22, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeStyle = '#fff';
+                ctx.stroke();
+
+                ctx.fillStyle = stone.placed ? '#000' : '#cbd5e1';
+                ctx.font = '12px Noto Serif TC';
+                ctx.fillText(stone.name, x - 12, y + 4);
             });
 
-            document.getElementById('stage-counter').innerText = `聖德考驗：第 ${index + 1} / 5 關`;
-            document.getElementById('virtue-tag').innerText = stage.tag;
-            document.getElementById('question-title').innerText = stage.title;
-            document.getElementById('scripture-text').innerText = stage.scripture;
-            document.getElementById('history-text').innerText = stage.history;
+            if (placedCount === 4) {
+                ctx.fillStyle = '#ffd700';
+                ctx.font = '16px Noto Serif TC';
+                ctx.fillText('✠ 聖家合一・拱門圓滿 ✠', 305, 230);
+            }
+        }
 
-            // 隱藏回饋區與下一步按鈕
-            const feedbackBox = document.getElementById('feedback-box');
-            feedbackBox.style.display = 'none';
-            feedbackBox.className = 'feedback-card';
-            document.getElementById('next-btn').style.display = 'none';
+        // ================= 關卡流程控制器 =================
+        function stageCleared(stageNum) {
+            playChime('stage_clear');
+            document.getElementById(`slot-${stageNum - 1}`).classList.remove('active');
+            document.getElementById(`slot-${stageNum - 1}`).classList.add('restored');
 
-            // 渲染選項
-            const container = document.getElementById('options-container');
-            container.innerHTML = '';
+            if (stageNum < 5) {
+                currentStage = stageNum;
+                document.getElementById(`slot-${currentStage}`).classList.add('active');
+                if (currentStage === 1) initStage2();
+                if (currentStage === 2) initStage3();
+                if (currentStage === 3) initStage4();
+                if (currentStage === 4) initStage5();
+            } else {
+                showFinalCertificate();
+            }
+        }
 
-            stage.options.forEach((opt, idx) => {
-                const btn = document.createElement('button');
-                btn.className = 'option-btn';
-                btn.innerHTML = `<span style="color: var(--gold-primary); font-weight: bold;">✠</span> <span>${opt.text}</span>`;
-                btn.onclick = () => handleAnswerSelect(idx, btn);
-                container.appendChild(btn);
+        function showFinalCertificate() {
+            document.getElementById('game-container').style.display = 'none';
+            document.getElementById('cert-panel').style.display = 'block';
+        }
+
+        function resetAllStages() {
+            currentStage = 0;
+            document.querySelectorAll('.window-slot').forEach((slot, idx) => {
+                slot.className = 'window-slot';
+                if (idx === 0) slot.classList.add('active');
             });
+            document.getElementById('game-container').style.display = 'block';
+            document.getElementById('cert-panel').style.display = 'none';
+            prismAngle = 0;
+            initStage1();
         }
 
-        function handleAnswerSelect(selectedIdx, btnElement) {
-            if (answeredCurrent) return;
-            answeredCurrent = true;
+        // 主渲染循環
+        function gameLoop() {
+            if (currentStage === 0) renderStage1();
+            else if (currentStage === 1) renderStage2();
+            else if (currentStage === 2) renderStage3();
+            else if (currentStage === 3) renderStage4();
+            else if (currentStage === 4) renderStage5();
 
-            const stage = stagesData[currentStageIndex];
-            const choice = stage.options[selectedIdx];
-            const feedbackBox = document.getElementById('feedback-box');
-            const feedbackMsg = document.getElementById('feedback-msg');
-            const nextBtn = document.getElementById('next-btn');
-
-            // 禁用所有按鈕
-            const allBtns = document.querySelectorAll('.option-btn');
-            allBtns.forEach(b => b.disabled = true);
-
-            if (choice.correct) {
-                // 正確處理
-                playSacredChime('correct');
-                btnElement.classList.add('correct');
-                feedbackBox.className = 'feedback-card correct-feedback';
-                feedbackMsg.innerHTML = `<strong>✨ 領悟正道・恩寵充盈！</strong><br>${choice.reason}<br><br><span style="color: #ffd700;">${stage.trivia}</span>`;
-                
-                // 點亮進度條寶石
-                document.getElementById(`gem-${currentStageIndex}`).classList.add('completed');
-            } else {
-                // 錯誤處理
-                playSacredChime('incorrect');
-                btnElement.classList.add('incorrect');
-                graceScore = Math.max(0, graceScore - 15);
-                document.getElementById('grace-score').innerText = graceScore;
-
-                feedbackBox.className = 'feedback-card incorrect-feedback';
-                feedbackMsg.innerHTML = `<strong>⚠ 偏離聖德・省思自勉：</strong><br>${choice.reason}<br><br><span style="color: #ffb4a2;">${stage.trivia}</span>`;
-
-                // 標示出正確答案
-                stage.options.forEach((opt, idx) => {
-                    if (opt.correct) {
-                        allBtns[idx].classList.add('correct');
-                    }
-                });
-            }
-
-            feedbackBox.style.display = 'block';
-            nextBtn.style.display = 'inline-block';
-
-            if (currentStageIndex === stagesData.length - 1) {
-                nextBtn.innerText = '圓滿朝聖・領受宗徒認證 🏆';
-            } else {
-                nextBtn.innerText = '領受恩寵，邁向下一關 ➔';
-            }
+            animationFrameId = requestAnimationFrame(gameLoop);
         }
 
-        function proceedToNextStage() {
-            if (currentStageIndex < stagesData.length - 1) {
-                currentStageIndex++;
-                loadStage(currentStageIndex);
-            } else {
-                showCertificate();
-            }
-        }
-
-        function showCertificate() {
-            playSacredChime('correct');
-            document.getElementById('game-view').style.display = 'none';
-            document.getElementById('cert-view').style.display = 'block';
-
-            document.getElementById('final-score-val').innerText = `${graceScore} / 100`;
-            
-            let rankTitle = "";
-            if (graceScore >= 90) {
-                rankTitle = "「極致光芒・卓越天主教青年楷模」";
-            } else if (graceScore >= 70) {
-                rankTitle = "「篤行求真・虔誠真理朝聖者」";
-            } else {
-                rankTitle = "「力求自新・謙遜恩寵受教者」";
-            }
-            document.getElementById('final-rank').innerText = rankTitle;
-        }
-
-        function restartGame() {
-            currentStageIndex = 0;
-            graceScore = 100;
-            document.getElementById('grace-score').innerText = graceScore;
-            
-            document.querySelectorAll('.virtue-gem').forEach(gem => {
-                gem.classList.remove('active', 'completed');
-            });
-
-            document.getElementById('game-view').style.display = 'block';
-            document.getElementById('cert-view').style.display = 'none';
-            loadStage(0);
-        }
-
-        // 初始化遊戲
+        // 啟動第一關
         window.onload = () => {
-            loadStage(0);
+            initStage1();
+            gameLoop();
         };
     </script>
 </body>
